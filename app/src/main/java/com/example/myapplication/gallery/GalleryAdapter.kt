@@ -46,6 +46,9 @@ class GalleryAdapter : ListAdapter<PhotoItem, MyViewHolder>(DIFFCALLBACK) {
             setShimmerAngle(0)
             startShimmerAnimation()
         }
+        holder.itemView.photo_name.text = getItem(position).photoUser
+        holder.itemView.photo_faviotes.text = getItem(position).photoFavorites.toString()
+        holder.itemView.photo_likes.text = getItem(position).photoLikes.toString()
         holder.itemView.image_cell.layoutParams.height = getItem(position).photoHeight
         Glide.with(holder.itemView)
             .load(getItem(position).previewUrl)
